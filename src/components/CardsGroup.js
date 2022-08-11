@@ -50,6 +50,7 @@ const CardsGroup = ({movies, favoriteModal, refresh, setRefresh}) => {
     setRefresh(!refresh)
     handleClose()
   }
+  console.log(movies)
 
   return (
     <Row xs={1} sm={2} md={4} lg={6} className="m-2 g-4">
