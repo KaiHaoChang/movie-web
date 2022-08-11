@@ -24,7 +24,7 @@ const MovieList = () => {
       getMovieList()
     }  else  {
       const getMovieList = async () => {
-        const res = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&query=${search}&page=${pageNumber}&include_adult=false`)
+        const res = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=725fb0d5c82abd1b20f9081367bda7e5&language=en-US&query=${search}&page=${pageNumber}&include_adult=false`)
         const data = await res.json()
         setMovies(data.results)
         setTotalPages(data.total_pages)
