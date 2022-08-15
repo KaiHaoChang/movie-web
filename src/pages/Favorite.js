@@ -8,13 +8,13 @@ const Favorite = () => {
 
   useEffect(()=>{
     setMovies(JSON.parse(localStorage.getItem('favorite_movies')))
+    console.log(movies)
   },[refresh])
-  console.log(movies)
 
 
   return (
     <div>
-      {movies.length === 0 ? <h1>您還沒有加入最愛</h1> : <CardsGroup movies={movies} favoriteModal={true} refresh={refresh} setRefresh={setRefresh} />}
+      {movies ? <h1>您還沒有加入最愛</h1> : <CardsGroup movies={movies} favoriteModal={true} refresh={refresh} setRefresh={setRefresh} />}
     </div>
   )
 }
