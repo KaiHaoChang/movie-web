@@ -9,7 +9,7 @@ const Favorite = () => {
   useEffect(()=>{
     setMovies(JSON.parse(localStorage.getItem('favorite_movies')))
     console.log(movies)
-  },[refresh])
+  },[refresh, movies])
 
 
   return (
