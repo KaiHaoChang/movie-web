@@ -33,7 +33,9 @@ const CardsGroup = ({movies, favoriteModal, refresh, setRefresh}) => {
 
   // 加入最愛
   const addFavorite = (movie) => {
-    if (data.find(item => item.id === movie.id)) {
+    if (data === null) {
+      return 
+    } else if (data.find(item => item.id === movie.id)) {
       return alert('這個已經加入最愛了')
     } else {
       data.push(movie)    
