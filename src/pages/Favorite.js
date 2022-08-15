@@ -3,18 +3,18 @@ import CardsGroup from '../components/CardsGroup'
 
 const Favorite = () => {
 
-  const [movies, setMovies] = useState([])
+  const [favoriteMovies, setFavoriteMovies] = useState([])
   const [refresh, setRefresh] = useState(false);
 
   useEffect(()=>{
-    setMovies(JSON.parse(localStorage.getItem('favorite_movies')))
-    console.log(movies)
+    setFavoriteMovies(JSON.parse(localStorage.getItem('favorite_movies')))
+    console.log(favoriteMovies)
   },[])
 
 
   return (
     <div>
-      {movies ? <h1>您還沒有加入最愛</h1> : <CardsGroup movies={movies} favoriteModal={true} refresh={refresh} setRefresh={setRefresh} />}
+      {favoriteMovies ? <h1>您還沒有加入最愛</h1> : <CardsGroup movies={favoriteMovies} favoriteModal={true} refresh={refresh} setRefresh={setRefresh} />}
     </div>
   )
 }
