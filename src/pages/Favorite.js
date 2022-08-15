@@ -7,13 +7,14 @@ const Favorite = () => {
   const [refresh, setRefresh] = useState(false);
 
   useEffect(()=>{
-    const getFavorite = JSON.parse(localStorage.getItem('favorite_movies'))
-    console.log(getFavorite)
-    setFavoriteMovies(getFavorite)
-    console.log(favoriteMovies)
+    const getFavorite = () => {
+      console.log(favoriteMovies)
+      return setFavoriteMovies(JSON.parse(localStorage.getItem('favorite_movies')))
+    }
+    getFavorite()
   },[refresh])
 
-      console.log(favoriteMovies)
+console.log(favoriteMovies)
 
   return (
     <div>
