@@ -14,7 +14,7 @@ const Favorite = () => {
 
   return (
     <div>
-      <CardsGroup movies={movies} favoriteModal={true} refresh={refresh} setRefresh={setRefresh} />
+      {movies.length === 0 ? <h1>您還沒有加入最愛</h1> : <CardsGroup movies={movies} favoriteModal={true} refresh={refresh} setRefresh={setRefresh} />}
     </div>
   )
 }
