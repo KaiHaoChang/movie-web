@@ -22,8 +22,8 @@ const CardsGroup = ({movies, favoriteModal, refresh, setRefresh}) => {
   useEffect(()=>{
     console.log(movies)
     const getFavorite = JSON.parse(localStorage.getItem('favorite_movies'))
-    if (data === null) {
-      return 
+    if (getFavorite === null) {
+      setData([])
     } else {
       setData(getFavorite)
     }
