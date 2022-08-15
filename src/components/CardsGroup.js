@@ -43,13 +43,12 @@ const CardsGroup = ({movies, favoriteModal, refresh, setRefresh}) => {
     handleClose()
   }
 
-  const removeFavorite = (movie) => {
-    const newData = data.filter(item => item.id !== movie.id)
-    localStorage.setItem('favorite_movies', JSON.stringify(newData))
-    setRefresh(!refresh)
-    handleClose()
-  }
-  console.log(movies)
+  // const removeFavorite = (movie) => {
+  //   const newData = data.filter(item => item.id !== movie.id)
+  //   localStorage.setItem('favorite_movies', JSON.stringify(newData))
+  //   setRefresh(!refresh)
+  //   handleClose()
+  // }
 
   return (
     <Row xs={1} sm={2} md={4} lg={6} className="m-2 g-4">
@@ -70,7 +69,7 @@ const CardsGroup = ({movies, favoriteModal, refresh, setRefresh}) => {
       ))}
 
       {/* 這是MODAL */}
-      {favoriteModal ? 
+      {/* {favoriteModal ? 
         //如果是最愛的話回傳的Modal
         <Modal size="none"  show={show} onHide={handleClose}>
           <Modal.Header closeButton>
@@ -88,7 +87,7 @@ const CardsGroup = ({movies, favoriteModal, refresh, setRefresh}) => {
             </Button>
           </Modal.Footer>
         </Modal>      
-      : //如果不是最愛的話回傳的Modal
+      : //如果不是最愛的話回傳的Modal */}
         <Modal size="none"  show={show} onHide={handleClose}>
           <Modal.Header closeButton>
             <Modal.Title className='display-6'>{movie.title}</Modal.Title>
@@ -105,7 +104,7 @@ const CardsGroup = ({movies, favoriteModal, refresh, setRefresh}) => {
             </Button>
           </Modal.Footer>
         </Modal>
-     }
+     {/* } */}
     </Row>
   )
 }
