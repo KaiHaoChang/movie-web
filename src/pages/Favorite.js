@@ -18,7 +18,7 @@ console.log(favoriteMovies)
 
   return (
     <div>
-      {favoriteMovies ? <h1>您還沒有加入最愛</h1> : <CardsGroup movies={favoriteMovies} favoriteModal={true} refresh={refresh} setRefresh={setRefresh} />}
+      {favoriteMovies.length ? <h1>您還沒有加入最愛</h1> : <CardsGroup movies={favoriteMovies} favoriteModal={true} refresh={refresh} setRefresh={setRefresh} />}
     </div>
   )
 }
