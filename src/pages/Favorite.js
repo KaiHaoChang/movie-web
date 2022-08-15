@@ -27,9 +27,17 @@ const Favorite = () => {
   },[refresh])
 
 // 刪除最愛
+  // const removeFavorite = (movie) => {
+  //   const newData = data.filter(item => item.id !== movie.id)
+  //   localStorage.setItem('favorite_movies', JSON.stringify(newData))
+  //   setRefresh(!refresh)
+  //   handleClose()
+  // }
+
   const removeFavorite = (movie) => {
-    const newData = data.filter(item => item.id !== movie.id)
-    localStorage.setItem('favorite_movies', JSON.stringify(newData))
+    const localData = JSON.parse(localStorage.getItem('favorite_movies'))
+    const newLocalData = localData.filter(item => item.id !== movie.id)
+    localStorage.setItem('favorite_movies', JSON.stringify(newLocalData))
     setRefresh(!refresh)
     handleClose()
   }
@@ -37,7 +45,6 @@ const Favorite = () => {
 
   return (
     <div>
-      {/* {movies.length ? <h1>您還沒有加入最愛的電影</h1> :  */}
         <Row xs={1} sm={2} md={4} lg={6} className="m-2 g-4">
           {movies.map(item => (
             <Col key={item.id}>
@@ -74,7 +81,6 @@ const Favorite = () => {
               </Modal.Footer>
             </Modal>
         </Row>
-      {/* }    */}
     </div>
   )
 }
