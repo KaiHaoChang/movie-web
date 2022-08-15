@@ -20,25 +20,23 @@ const CardsGroup = ({movies, favoriteModal, refresh, setRefresh}) => {
 
   
   useEffect(()=>{
+    console.log(movies)
     const getFavorite = JSON.parse(localStorage.getItem('favorite_movies'))
     if (data === null) {
       return setData([])
     } else {
       setData(getFavorite)
     }
-    console.log(data)
   },[refresh])
 
 
 
   // 加入最愛
   const addFavorite = (movie) => {
-
     if (data.find(item => item.id === movie.id)) {
       return alert('這個已經加入最愛了')
     } else {
       data.push(movie)    
-      console.log(data)
       localStorage.setItem('favorite_movies', JSON.stringify(data))
     }
     handleClose()
