@@ -1,5 +1,4 @@
-import React,{useState} from 'react'
-import { useEffect } from 'react';
+import React from 'react'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
@@ -23,7 +22,7 @@ const SearchBtn = ({setMovies, setTotalPages, pageNumber, setIsSeach, setCurrent
   return (
       <InputGroup className="mb-3 p-2">
         <Form.Control placeholder='movie name...' onChange={e => setSearch(e.target.value)}/>
-        <Button variant="primary" onClick={()=>handleSearch()} >
+        <Button variant="primary" onClick={()=>handleSearch(search)} >
           Search
         </Button>
       </InputGroup>
